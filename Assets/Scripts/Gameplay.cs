@@ -18,6 +18,7 @@ public class Gameplay : MonoBehaviour
     void Awake()
     {
         swapEvent = null;
+        currentElement = Element.Fire;
         // Subscribe in other scripts like this -> swapEvent += new SwapElementEvent(functionName)
     }
 
@@ -45,11 +46,12 @@ public class Gameplay : MonoBehaviour
 
     // Swaps the element of your base to another type
     void SwapElement(Element elem)
-    { 
+    {
+        Debug.Log(elem);
         if(elem != currentElement)
         {
             currentElement = elem;
-            swapEvent();
+            swapEvent?.Invoke();
         }
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Gameplay : MonoBehaviour
 {
-    public enum element
+    public enum Element
     {
         Fire,
         Water,
@@ -12,7 +12,7 @@ public class Gameplay : MonoBehaviour
     }
 
     delegate void SwapElementEvent();
-    public element currentElement;
+    public Element currentElement;
     SwapElementEvent swapEvent;
 
     void Awake()
@@ -24,12 +24,28 @@ public class Gameplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       
+    }
+
+    public void SwapElementOnClick(int elem)
+    {
+        switch (elem)
+        {
+            case 0:
+                SwapElement(Element.Fire);
+                break;
+            case 1:
+                SwapElement(Element.Water);
+                break;
+            case 2:
+                SwapElement(Element.Earth);
+                break;
+        }
     }
 
     // Swaps the element of your base to another type
-    void SwapElement(element elem)
-    {
+    void SwapElement(Element elem)
+    { 
         if(elem != currentElement)
         {
             currentElement = elem;

@@ -206,7 +206,7 @@ TextureImporter:
       name: grass_tile
       rect:
         serializedVersion: 2
-        x: 298
+        x: 300
         y: 1125
         width: 100
         height: 100
@@ -492,27 +492,6 @@ TextureImporter:
       bones: []
       spriteID: 5b727729fbbede0468e4bdde2b2b98e5
       internalID: 5761609760724731429
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Base_8
-      rect:
-        serializedVersion: 2
-        x: 894
-        y: 629
-        width: 194
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3ae3850900a5eb04b96c5d44aa777738
-      internalID: 5330010876497713853
       vertices: []
       indices: 
       edges: []

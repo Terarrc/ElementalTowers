@@ -1,0 +1,535 @@
+fileFormatVersion: 2
+guid: a485b196ff90471469e55186f6a4ef23
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7476836275818784583
+    second: fire_blob
+  - first:
+      213: 4257201693925113939
+    second: earth_blob
+  - first:
+      213: 4646492087354950417
+    second: water_blob
+  - first:
+      213: 2301827199964536633
+    second: grass_tile
+  - first:
+      213: -4433804105874486208
+    second: path_tile
+  - first:
+      213: -1762298965713462138
+    second: fire_projectile
+  - first:
+      213: -2618160635350768872
+    second: earth_projectile
+  - first:
+      213: -7824750527289490808
+    second: water_projectile
+  - first:
+      213: -4480580463629368303
+    second: fire_tower
+  - first:
+      213: 6583661650741666228
+    second: earth_tower
+  - first:
+      213: 87598699333754140
+    second: water_tower
+  - first:
+      213: 808828292706115263
+    second: fire_ressource_on
+  - first:
+      213: 6704515368217385286
+    second: earth_ressource_on
+  - first:
+      213: 8947817888826119571
+    second: water_ressource_on
+  - first:
+      213: -6578030829471126634
+    second: fire_ressource_off
+  - first:
+      213: -3452893489792111410
+    second: earth_ressource_off
+  - first:
+      213: 5761609760724731429
+    second: water_ressource_off
+  - first:
+      213: 5330010876497713853
+    second: Base_8
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fire_blob
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1125
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdafc113777948841b53f8cd61928972
+      internalID: 7476836275818784583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: earth_blob
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1125
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab26059d990180949a022fa24aee37aa
+      internalID: 4257201693925113939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_blob
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1125
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f52ce0a454027be4a88810d07b0d42ae
+      internalID: 4646492087354950417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass_tile
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 1125
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1daa2066328d14f43a756509329e3c9e
+      internalID: 2301827199964536633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: path_tile
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1125
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09964ad03f90dc344ba617a93e7be5e0
+      internalID: -4433804105874486208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_projectile
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1125
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fa38a8d231fa804db97ba1a18e863f0
+      internalID: -1762298965713462138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: earth_projectile
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1125
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce5614828d251f64a94bf4b22b820286
+      internalID: -2618160635350768872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_projectile
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1125
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb4f34ec2239001409e8253fffdae7ba
+      internalID: -7824750527289490808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_tower
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 925
+        width: 100
+        height: 200
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4e7b67b93ed3094a82b6b45edb0ae35
+      internalID: -4480580463629368303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: earth_tower
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 925
+        width: 100
+        height: 200
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a954b3b8f3fcf7d4b9cb597392d59abc
+      internalID: 6583661650741666228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_tower
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 925
+        width: 100
+        height: 200
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96c1c91643666424cabdb09bf75432a5
+      internalID: 87598699333754140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_ressource_on
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 925
+        width: 100
+        height: 200
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbb05ff85aafcc240838b2c6b790e0e0
+      internalID: 808828292706115263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: earth_ressource_on
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 925
+        width: 100
+        height: 200
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfedb95e1cc0c0a408ec2d26b2f9de29
+      internalID: 6704515368217385286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_ressource_on
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 925
+        width: 100
+        height: 200
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1fc0931bba1781459af0c7e8dd91479
+      internalID: 8947817888826119571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_ressource_off
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 925
+        width: 100
+        height: 200
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a6aa5d1cd6851845aaf5b72b79b0b78
+      internalID: -6578030829471126634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: earth_ressource_off
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 925
+        width: 100
+        height: 200
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6dcd9af9de53a64ea305c0e0bcb4aad
+      internalID: -3452893489792111410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_ressource_off
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 925
+        width: 100
+        height: 200
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b727729fbbede0468e4bdde2b2b98e5
+      internalID: 5761609760724731429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Base_8
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 629
+        width: 194
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ae3850900a5eb04b96c5d44aa777738
+      internalID: 5330010876497713853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

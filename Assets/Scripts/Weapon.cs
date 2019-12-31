@@ -8,6 +8,7 @@ public class Weapons : MonoBehaviour
     public int speed;
     public int fireRate;
     public float range;
+    public Projectile projectile;
     public EntityElement entityElement;
     private GameObject target;
 
@@ -33,7 +34,17 @@ public class Weapons : MonoBehaviour
     // Fires a projectile at a target
     void Fire(GameObject target)
     {
+        Vector2 startPoint = transform.position;
+        Vector2 targetPoint = target.transform.position;
 
+        projectile = Instantiate(projectile, startPoint, Quaternion.identity);
+        projectile.damage = 1;
+        projectile.speed = 1;
+        projectile.target = new Vector2(target.transform.position.x, target.transform.position.y);
+        projectile.targetCollider = target.GetComponent<BoxCollider2D>();
+        projectile.GoToTarget();
+
+        
     }
 
     // Get all ennemies inside the range of the turret
@@ -73,7 +84,7 @@ public class Weapons : MonoBehaviour
                         lockOnTarget = potentialTarget;
                     }
                 }
-            }          
+            }
         }
 
         return lockOnTarget;

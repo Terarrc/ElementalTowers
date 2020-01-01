@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemiesManager : MonoBehaviour
+public class WavesManager : MonoBehaviour
 {
 	public List<Vector3> Path1;
 	public List<Vector3> Path2;

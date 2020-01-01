@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+	int index = 0;
+	List<Vector3> path;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +18,9 @@ public class Enemy : MonoBehaviour
     {
         
     }
+
+	void ApplyDamages(int damages, Gameplay.Element element)
+	{
+
+	}
 }

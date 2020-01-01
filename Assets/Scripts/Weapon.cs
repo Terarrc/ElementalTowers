@@ -10,7 +10,9 @@ public class Weapons : MonoBehaviour
     public float range;
     public Projectile projectile;
     public EntityElement entityElement;
-    private GameObject target;
+    private Enemy target;
+
+    private float timerFire;
 
     // Search for an ennemy and lock on until he dies or leaves range
 
@@ -22,28 +24,20 @@ public class Weapons : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        timerFire = 1 / fireRate;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
+        float time = Time.deltaTime;
+        timerFire -= time;
 
-    // Fires a projectile at a target
-    void Fire(GameObject target)
-    {
-        Vector2 startPoint = transform.position;
-        Vector2 targetPoint = target.transform.position;
-
-        projectile = Instantiate(projectile, startPoint, Quaternion.identity);
-        projectile.damage = 1;
-        projectile.speed = 1;
-        projectile.target = new Vector2(target.transform.position.x, target.transform.position.y);
-        projectile.targetCollider = target.GetComponent<BoxCollider2D>();
-        projectile.GoToTarget();
-        projectile.element = entityElement;       
+        if(timerFire <= 0)
+        {
+            Fire();
+            timerFire = 1 / fireRate;
+        }
     }
 
     // Get all ennemies inside the range of the turret
@@ -87,6 +81,24 @@ public class Weapons : MonoBehaviour
         }
 
         return lockOnTarget;
+    }
+
+    // Fires a projectile at a target
+    void Fire()
+    {
+        GameObject target;
+
+        target = GetClosestEnnemy(GetAllEnnemiesInRange());
+
+        Vector2 startPoint = transform.position;
+        Vector2 targetPoint = target.transform.position;
+
+        projectile = Instantiate(projectile, startPoint, Quaternion.identity);
+        projectile.damage = 1;
+        projectile.speed = 1;
+        projectile.target = target;
+        projectile.GoToTarget();
+        projectile.element = entityElement;
     }
 
 }

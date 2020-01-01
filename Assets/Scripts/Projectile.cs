@@ -6,9 +6,8 @@ public class Projectile : MonoBehaviour
 { 
     public int damage = 0;
     public int speed = 0;
-    public Vector2 target;
     public EntityElement element;
-    public BoxCollider2D targetCollider;
+    public GameObject target;
     private bool isGoing = false;
 
     private void Awake()
@@ -27,7 +26,7 @@ public class Projectile : MonoBehaviour
     {
         if (isGoing)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.fixedDeltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.fixedDeltaTime);
         }
     }
 
@@ -41,9 +40,9 @@ public class Projectile : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // If collides with the target
-        if(collision.collider == targetCollider)
+        if(collision.collider == target.GetComponent<BoxCollider2D>())
         {
-            Enemy enemy = targetCollider.gameObject.GetComponent<Enemy>();
+            Enemy enemy = target.GetComponent<Enemy>();
             if(enemy != null)
             enemy.ApplyDamages(damage, element.Element);
         }

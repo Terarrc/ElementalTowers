@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1873579756933139979}
   - component: {fileID: 1873579756933139988}
-  - component: {fileID: 5897843317336137035}
+  - component: {fileID: -8483317887632544553}
   m_Layer: 0
   m_Name: Carrier
   m_TagString: Untagged
@@ -68,8 +68,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1792147095
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 8391880989248596285, guid: a485b196ff90471469e55186f6a4ef23,
     type: 3}
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5897843317336137035
+--- !u!114 &-8483317887632544553
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,6 +92,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1873579756933139989}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 587d36a46c1532549a0ad980c30df9cd, type: 3}
+  m_Script: {fileID: 11500000, guid: da19e50d5efaf4e408be347416d76b72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityElement: {fileID: 0}
+  speed: 0
+  target: {x: 0, y: 0}
+  targetCollider: {fileID: 0}

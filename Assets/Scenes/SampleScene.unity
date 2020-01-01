@@ -902,7 +902,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &647475977
 GameObject:
@@ -3712,7 +3712,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &937064189
 MonoBehaviour:
@@ -3747,10 +3747,10 @@ MonoBehaviour:
   gameplay: {fileID: 1637059353}
   Blob: {fileID: 990095069644069680, guid: 00e28d8a7a5eeb3488576242c488847e, type: 3}
   waveLevel: 0
-  element: 0
-  additionnalFire: 0
-  additionnalEarth: 0
-  additionnalWater: 0
+  element: 2
+  additionnalFire: 1
+  additionnalEarth: 1
+  additionnalWater: 1
 --- !u!1 &1185687029
 GameObject:
   m_ObjectHideFlags: 0
@@ -4206,7 +4206,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1772750124
 GameObject:

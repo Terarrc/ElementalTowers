@@ -2,23 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapons : MonoBehaviour
+// Search for an ennemy and lock on until he dies or leaves range
+public class Weapon : MonoBehaviour
 {
     public int damage;
     public int speed;
     public int fireRate;
     public float range;
     public Projectile projectile;
-    public EntityElement entityElement;
+    private EntityElement entityElement;
     private Enemy target;
 
     private float timerFire;
 
-    // Search for an ennemy and lock on until he dies or leaves range
-
     void Awake()
     {
-        
+        entityElement = GetComponent<EntityElement>();
     }
 
     // Start is called before the first frame update
@@ -43,7 +42,7 @@ public class Weapons : MonoBehaviour
     // Get all ennemies inside the range of the turret
     List<GameObject> GetAllEnnemiesInRange()
     {
-        List<GameObject> ennemiesInRange = null;
+        List<GameObject> ennemiesInRange = new List<GameObject>();
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, range, LayerMask.NameToLayer("Ennemies"));
 
         foreach (Collider2D h in hits)
@@ -67,6 +66,7 @@ public class Weapons : MonoBehaviour
             if (ennemyElement != null)
             {
                 // If the attacking elements is strong agains the defending element
+                
                 if (Gameplay.IsElementStrongAgainst(entityElement.Element, ennemyElement.Element))
                 {
                     Vector3 directionToTarget = potentialTarget.transform.position - currentPosition;
@@ -89,16 +89,18 @@ public class Weapons : MonoBehaviour
         GameObject target;
 
         target = GetClosestEnnemy(GetAllEnnemiesInRange());
+        if(target != null)
+        {
+            Vector2 startPoint = transform.position;
+            Vector2 targetPoint = target.transform.position;
 
-        Vector2 startPoint = transform.position;
-        Vector2 targetPoint = target.transform.position;
-
-        projectile = Instantiate(projectile, startPoint, Quaternion.identity);
-        projectile.damage = 1;
-        projectile.speed = 1;
-        projectile.target = target;
-        projectile.GoToTarget();
-        projectile.element = entityElement;
+            Projectile createdProjectile = Instantiate(projectile, startPoint, Quaternion.identity);
+            createdProjectile.element.Element = entityElement.Element;
+            createdProjectile.damage = damage;
+            createdProjectile.speed = speed;
+            createdProjectile.target = target;            
+            createdProjectile.GoToTarget();
+        }     
     }
 
 }

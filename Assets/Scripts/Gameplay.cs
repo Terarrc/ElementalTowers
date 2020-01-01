@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Gameplay : MonoBehaviour
 {
@@ -11,12 +12,29 @@ public class Gameplay : MonoBehaviour
         Earth
     }
 
+	public Text gemsText;
+
+	public float timerWave;
+
     public delegate void SwapElementEvent(Element elem);
     public Element PlayerElement;
-    public int gems;
+
+	private int gems;
+    public int Gems {
+		get {
+			return gems;
+		}
+		set {
+			gems = value;
+			gemsText.text = value.ToString();
+		}
+	}
     public SwapElementEvent swapEvent;
 
-    void Awake()
+	public delegate void TimerWaveEvent();
+	public TimerWaveEvent timerWaveEvent;
+
+	void Awake()
     {
         swapEvent = null;
         PlayerElement = Element.Fire;
@@ -26,8 +44,14 @@ public class Gameplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
-    }
+		InvokeRepeating("NewWave", timerWave, timerWave);
+		Gems = 200;
+	}
+
+	public void NewWave()
+	{
+		timerWaveEvent.Invoke();
+	}
 
     // True if the attacking element is strong against the defending element
     public static bool IsElementStrongAgainst(Element elemAttack, Element elemDefense)

@@ -3744,12 +3744,13 @@ MonoBehaviour:
   - {x: 6, y: -4, z: 0}
   - {x: 0, y: -4, z: 0}
   - {x: 0, y: 0, z: 0}
+  gameplay: {fileID: 1637059353}
   Blob: {fileID: 990095069644069680, guid: 00e28d8a7a5eeb3488576242c488847e, type: 3}
-  waveLevel: 50
+  waveLevel: 0
   element: 0
   additionnalFire: 0
-  additionnalEarth: 3
-  additionnalWater: 2
+  additionnalEarth: 0
+  additionnalWater: 0
 --- !u!1 &1185687029
 GameObject:
   m_ObjectHideFlags: 0
@@ -4190,8 +4191,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c10d52c8b4f1b04dbe2b8c4739d4bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gemsText: {fileID: 461996891}
+  timerWave: 15
   PlayerElement: 0
-  gems: 0
 --- !u!4 &1637059354
 Transform:
   m_ObjectHideFlags: 0
@@ -11569,6 +11571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 458da39c250947c77a0e896ced00bf3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameplay: {fileID: 1637059353}
   tower: {fileID: 6707257800040043544, guid: 69d55151d0798350db71577273526e14, type: 3}
   ressource: {fileID: 0}
   buffer: {fileID: 0}

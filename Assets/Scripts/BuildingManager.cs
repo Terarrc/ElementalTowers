@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BuildingManager : MonoBehaviour
 {
+	public Gameplay gameplay;
+
     public Building tower;
     public Building ressource;
     public Building buffer;
@@ -16,7 +18,7 @@ public class BuildingManager : MonoBehaviour
     void Start()
     {
 
-    }
+	}
 
     // Update is called once per frame
     void Update()
@@ -75,6 +77,8 @@ public class BuildingManager : MonoBehaviour
 
     private void PlaceBuilding(Vector2 v2) {
         Building o = Instantiate(chooseBuilding, v2, Quaternion.identity);
+
+		o.GetComponent<EntityElement>().EnableSwapElement(gameplay);
 
         SpriteRenderer towerSpriteRender = o.GetComponent<SpriteRenderer>();
         towerSpriteRender.color = Color.white;

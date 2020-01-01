@@ -8,7 +8,7 @@ public class BuildingManager : MonoBehaviour
 	public Gameplay gameplay;
 
     public Building tower;
-    public Building ressource;
+    public Building resource;
     public Building buffer;
     public GameObject towerPreview;
     bool previewMode = false;
@@ -53,7 +53,7 @@ public class BuildingManager : MonoBehaviour
     public void StartBuildingMode(int choice) {
         chooseBuilding =
             choice == 0 ? tower :
-            choice == 1 ? ressource :
+            choice == 1 ? resource :
             choice == 2 ? buffer :
             null;
 

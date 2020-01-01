@@ -11,9 +11,9 @@ public class Gameplay : MonoBehaviour
         Earth
     }
 
-    delegate void SwapElementEvent();
+    public delegate void SwapElementEvent(Element elem);
     public Element PlayerElement;
-    SwapElementEvent swapEvent;
+    public SwapElementEvent swapEvent;
 
     void Awake()
     {
@@ -60,7 +60,7 @@ public class Gameplay : MonoBehaviour
         if(elem != PlayerElement)
         {
             PlayerElement = elem;
-            swapEvent?.Invoke();
+            swapEvent?.Invoke(elem);
         }
     }
 

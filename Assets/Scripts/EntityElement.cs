@@ -41,4 +41,13 @@ public class EntityElement : MonoBehaviour
 
     }
 
+	void ChangeElement(Gameplay.Element elem)
+	{
+		Element = elem;
+	}
+
+	public void SubscribeSwapElement(Gameplay gameplay)
+	{
+		gameplay.swapEvent += ChangeElement;
+	}
 }

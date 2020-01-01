@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
 
 public class Gameplay : MonoBehaviour
 {
@@ -34,12 +37,14 @@ public class Gameplay : MonoBehaviour
 	public delegate void TimerWaveEvent();
 	public TimerWaveEvent timerWaveEvent;
 
+
 	void Awake()
     {
         swapEvent = null;
         PlayerElement = Element.Fire;
         // Subscribe in other scripts like this -> swapEvent += new SwapElementEvent(functionName)
     }
+
 
     // Start is called before the first frame update
     void Start()
@@ -88,6 +93,22 @@ public class Gameplay : MonoBehaviour
             swapEvent?.Invoke(elem);
         }
     }
+
+    // Create a True random of a List
+    public static void Shuffle<T>(IList<T> list)
+    {
+        int n = list.Count;
+        System.Random rnd = new System.Random();
+        while (n > 1)
+        {
+            int k = (rnd.Next(0, n) % n);
+            n--;
+            T value = list[k];
+            list[k] = list[n];
+            list[n] = value;
+        }
+    }
+
 
     // Update is called once per frame
     void Update()

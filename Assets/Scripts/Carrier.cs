@@ -16,9 +16,9 @@ public class Carrier : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-		entityElement = GetComponent<EntityElement>();
+        entityElement = GetComponent<EntityElement>();
 
-	}
+    }
 
     // Update is called once per frame
     void Update()
@@ -37,4 +37,6 @@ public class Carrier : MonoBehaviour
             isGoing = true;
         }
     }
+
+
 }

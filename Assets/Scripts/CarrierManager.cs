@@ -7,11 +7,11 @@ using System.Text;
 public class CarrierManager : MonoBehaviour
 {
 
-    public EntityElement entityElement;
+    //public EntityElement entityElement;
     public int speed;
     public Carrier carrier;
     public Gameplay gameplay;
-    private GameObject target;
+    public GameObject target;
     private GameObject path;
 
     Vector2 startPos;
@@ -48,7 +48,7 @@ public class CarrierManager : MonoBehaviour
 
 
     // Create a Gem-Carrier
-    void GenerateCarrier(GameObject target)
+    void GenerateCarrier()
     {
         Vector2 startPoint = transform.position;
         Vector2 targetPoint = target.transform.position;
@@ -57,6 +57,10 @@ public class CarrierManager : MonoBehaviour
 
         newCarrier.speed = 1;
         newCarrier.target = new Vector2(target.transform.position.x, target.transform.position.y);
+
+        EntityElement carrierElement = newCarrier.GetComponent<EntityElement>();
+        carrierElement.EnableSwapElement(gameplay);
+        carrierElement.Element = gameplay.PlayerElement;
 
         newCarrier.targetCollider = target.GetComponent<BoxCollider2D>();
         newCarrier.GoToTarget();
@@ -104,6 +108,7 @@ public class CarrierManager : MonoBehaviour
         scale2.y = remainingLength;
         child.transform.localScale = scale2;
 
+        GenerateCarrier();
     }
 
 }

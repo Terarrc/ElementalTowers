@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Carrier : MonoBehaviour
 {
-    public EntityElement entityElement;
+    private EntityElement entityElement;
 
     public int speed = 0;
     public Vector2 target;

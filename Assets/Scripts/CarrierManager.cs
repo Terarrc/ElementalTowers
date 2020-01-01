@@ -76,36 +76,33 @@ public class CarrierManager : MonoBehaviour
         //Path newPath = Instantiate(path, startPoint, Quaternion.identity);
 
 
-        var list = Enumerable.Range(0, 2).ToList();
+        var list = Enumerable.Range(0, 3).ToList();
         Gameplay.Shuffle(list);
 
         //foreach (var i in list)
         for (int i = 0; i < list.Count() - 1; i++)
         {
-            Debug.Log(list.Count());
-            Debug.Log(transform.childCount);
             remainingElements--;
-            GameObject tempChild = this.gameObject.transform.GetChild(list[i]).gameObject;
+            GameObject tempChild = transform.GetChild(list[i]).gameObject;
 
-            // Calcul du longeur de chemin
-            // 9 - 2 *1 = 7
             int length = Random.Range(minPathLength, remainingLength - remainingElements * minPathLength);
-            Vector2 pos = tempChild.transform.position;
+            Vector3 pos = tempChild.transform.localPosition;
             pos.y = (pathLength - remainingLength) * -1;
-            Vector2 scale = tempChild.transform.localScale;
+            tempChild.transform.localPosition = pos;
+            Vector3 scale = tempChild.transform.localScale;
             scale.y = length;
-
+            tempChild.transform.localScale = scale;
             remainingLength = remainingLength - length;
         }
 
-        GameObject child = this.gameObject.transform.GetChild(list.Count()-1).gameObject;
+        GameObject child = this.gameObject.transform.GetChild(list[list.Count()-1]).gameObject;
 
-
-        Vector2 pos2 = child.transform.position;
+        Vector3 pos2 = child.transform.localPosition;
         pos2.y = (pathLength - remainingLength) * -1;
-        Vector2 scale2 = child.transform.localScale;
+        child.transform.localPosition = pos2;
+        Vector3 scale2 = child.transform.localScale;
         scale2.y = remainingLength;
-
+        child.transform.localScale = scale2;
 
     }
 

@@ -45,7 +45,9 @@ public class EntityElement : MonoBehaviour
 
 	void ChangeElement(Gameplay.Element elem)
 	{
-		Element = elem;
+        if (CanChangeElement) {
+            Element = elem;
+        }
 	}
 
 	public void EnableSwapElement(Gameplay gameplay)

@@ -11571,6 +11571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 458da39c250947c77a0e896ced00bf3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameplay: {fileID: 1637059353}
   tower: {fileID: 6707257800040043544, guid: 69d55151d0798350db71577273526e14, type: 3}
   ressource: {fileID: 0}
   buffer: {fileID: 0}

@@ -30,22 +30,28 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        col = Physics2D.OverlapCircle(transform.position, radius, enemyLayer);       
+		if (target != null) {
+			col = Physics2D.OverlapCircle(transform.position, radius, enemyLayer);       
 
-        if (isGoing)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
-        }
+			if (isGoing)
+			{
+				transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+			}
 
-        if (col == enemyCollider)
-        {
-            Enemy enemy = target.GetComponent<Enemy>();
-            if (enemy != null)
-                enemy.ApplyDamages(damage, element.Element);
+			if (col == enemyCollider)
+			{
+				Enemy enemy = target.GetComponent<Enemy>();
+				if (enemy != null)
+					enemy.ApplyDamages(damage, element.Element);
 
-            // Destroy Projectile
-            Destroy(gameObject);
-        }
+				// Destroy Projectile
+				Destroy(gameObject);
+			}
+		}
+		else {
+			Destroy(gameObject);
+		}
+
     }
 
     // Move towards the target

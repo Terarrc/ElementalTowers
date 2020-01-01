@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EntityElement : MonoBehaviour
 {
+	public bool CanChangeElement;
+
 	private Gameplay.Element element;
 	public Gameplay.Element Element { 
 		get {
@@ -46,7 +48,7 @@ public class EntityElement : MonoBehaviour
 		Element = elem;
 	}
 
-	public void SubscribeSwapElement(Gameplay gameplay)
+	public void EnableSwapElement(Gameplay gameplay)
 	{
 		gameplay.swapEvent += ChangeElement;
 	}

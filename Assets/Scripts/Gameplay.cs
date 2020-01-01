@@ -13,6 +13,7 @@ public class Gameplay : MonoBehaviour
 
     public delegate void SwapElementEvent(Element elem);
     public Element PlayerElement;
+    public int gems;
     public SwapElementEvent swapEvent;
 
     void Awake()

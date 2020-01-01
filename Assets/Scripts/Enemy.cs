@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
         
     }
 
-	void ApplyDamages(int damages, Gameplay.Element element)
+	public void ApplyDamages(int damages, Gameplay.Element element)
 	{
 
 	}

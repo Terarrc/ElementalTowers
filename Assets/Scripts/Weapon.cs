@@ -43,8 +43,7 @@ public class Weapons : MonoBehaviour
         projectile.target = new Vector2(target.transform.position.x, target.transform.position.y);
         projectile.targetCollider = target.GetComponent<BoxCollider2D>();
         projectile.GoToTarget();
-
-        
+        projectile.element = entityElement;       
     }
 
     // Get all ennemies inside the range of the turret

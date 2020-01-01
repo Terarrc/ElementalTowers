@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
-{
+{ 
     public int damage = 0;
     public int speed = 0;
     public Vector2 target;
+    public EntityElement element;
     public BoxCollider2D targetCollider;
     private bool isGoing = false;
 
@@ -42,7 +43,9 @@ public class Projectile : MonoBehaviour
         // If collides with the target
         if(collision.collider == targetCollider)
         {
-
+            Enemy enemy = targetCollider.gameObject.GetComponent<Enemy>();
+            if(enemy != null)
+            enemy.ApplyDamages(damage, element.Element);
         }
     }
 }

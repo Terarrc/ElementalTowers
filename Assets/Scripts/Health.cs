@@ -8,6 +8,10 @@ public class Health : MonoBehaviour
 	public int CurrentHealth;
 	protected EntityElement entityElement;
 
+	public delegate void KilledEvent();
+	public KilledEvent killedEvent;
+
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -26,6 +30,7 @@ public class Health : MonoBehaviour
 		if (Gameplay.IsElementStrongAgainst(element, entityElement.Element)) {
 			CurrentHealth -= damages;	
 			if (CurrentHealth <= 0) {
+				killedEvent?.Invoke();
 				Destroy(gameObject);
 			}
 		}

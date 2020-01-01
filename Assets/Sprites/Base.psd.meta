@@ -77,6 +77,9 @@ TextureImporter:
   - first:
       213: -2837685193218630633
     second: water_path
+  - first:
+      213: 6234176133674011997
+    second: castle
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -639,6 +642,27 @@ TextureImporter:
       bones: []
       spriteID: 65e0119440f4056429498a8fc713268a
       internalID: -2837685193218630633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: castle
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 925
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f4aea3e68de2fc4bb1766b300737913
+      internalID: 6234176133674011997
       vertices: []
       indices: 
       edges: []

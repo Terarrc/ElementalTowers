@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 991799839983080620}
   - component: {fileID: 991799839983080621}
   - component: {fileID: 1021104209149429087}
+  - component: {fileID: -7248394871967831474}
+  - component: {fileID: 2582097435023017777}
   m_Layer: 9
   m_Name: Projectile
   m_TagString: Untagged
@@ -99,3 +101,35 @@ MonoBehaviour:
   speed: 0
   element: {fileID: 0}
   target: {fileID: 0}
+--- !u!114 &-7248394871967831474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991799839983080623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 587d36a46c1532549a0ad980c30df9cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanChangeElement: 0
+--- !u!95 &2582097435023017777
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991799839983080623}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fee7bfadded7f0e4783fb1b47d8df15a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

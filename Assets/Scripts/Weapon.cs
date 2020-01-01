@@ -95,10 +95,10 @@ public class Weapon : MonoBehaviour
             Vector2 targetPoint = target.transform.position;
 
             Projectile createdProjectile = Instantiate(projectile, startPoint, Quaternion.identity);
+            createdProjectile.element.Element = entityElement.Element;
             createdProjectile.damage = damage;
             createdProjectile.speed = speed;
-            createdProjectile.target = target;
-            createdProjectile.element = entityElement;
+            createdProjectile.target = target;            
             createdProjectile.GoToTarget();
         }     
     }

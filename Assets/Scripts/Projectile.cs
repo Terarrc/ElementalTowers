@@ -16,7 +16,7 @@ public class Projectile : MonoBehaviour
 
     private void Awake()
     {
-
+        element = GetComponent<EntityElement>();
     }
 
     // Start is called before the first frame update
@@ -24,7 +24,7 @@ public class Projectile : MonoBehaviour
     {
         radius = 0.1f;
         enemyLayer = 1 << LayerMask.NameToLayer("Enemies");
-        enemyCollider = target.GetComponent<Collider2D>();
+        enemyCollider = target.GetComponent<Collider2D>();     
     }
 
     // Update is called once per frame

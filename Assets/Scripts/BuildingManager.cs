@@ -63,6 +63,8 @@ public class BuildingManager : MonoBehaviour
         }
         previewMode = true;
         towerPreview.gameObject.SetActive(true);
+        towerPreview.gameObject.GetComponent<SpriteRenderer>().sprite = chooseBuilding.GetComponent<SpriteRenderer>().sprite;
+
 		canvas.gameObject.SetActive(false);
     }
 

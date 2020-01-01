@@ -11749,7 +11749,8 @@ MonoBehaviour:
   canvas: {fileID: 1216444923}
   gameplay: {fileID: 1637059353}
   tower: {fileID: 6707257800040043544, guid: 69d55151d0798350db71577273526e14, type: 3}
-  ressource: {fileID: 0}
+  resource: {fileID: -5007551145915571013, guid: 33dfdcf414cf57370b2cb53c87884038,
+    type: 3}
   buffer: {fileID: 0}
   towerPreview: {fileID: 647475977}
 --- !u!1 &2129614269

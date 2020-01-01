@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BuildingManager : MonoBehaviour
 {
+	public Canvas canvas;
 	public Gameplay gameplay;
 
     public Building tower;
@@ -24,7 +25,11 @@ public class BuildingManager : MonoBehaviour
     void Update()
     {
         if (previewMode) {
-            int mask = 1 << LayerMask.NameToLayer("Path");
+			if (Input.GetMouseButtonDown(1)) {
+				StopBuildingMode();
+			}
+
+			int mask = 1 << LayerMask.NameToLayer("Path");
             mask += 1 << LayerMask.NameToLayer("Buildings");
 
             Vector2 rectifiedPos = SnapToGrid();
@@ -37,14 +42,12 @@ public class BuildingManager : MonoBehaviour
                 towerSpriteRenderer.color = new Color(0, 255, 0, 0.5f);
                 if (Input.GetMouseButtonDown(0)) {
                     PlaceBuilding(rectifiedPos);
-                } else if (Input.GetMouseButtonDown(1)) {
-                    StopBuildingMode();
                 }
             } else {
                 // Not allowed to build
                 towerSpriteRenderer.color = new Color(255, 0, 0, 0.5f);
             }
-        }
+		}
     }
 
     public void StartBuildingMode(int choice) {
@@ -60,12 +63,15 @@ public class BuildingManager : MonoBehaviour
         }
         previewMode = true;
         towerPreview.gameObject.SetActive(true);
+		canvas.gameObject.SetActive(false);
     }
 
     public void StopBuildingMode() {
         previewMode = false;
         towerPreview.gameObject.SetActive(false);
-    }
+		canvas.gameObject.SetActive(true);
+		;
+	}
 
     private Vector2 SnapToGrid() {
         Vector3 m_MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

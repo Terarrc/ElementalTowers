@@ -44,7 +44,7 @@ public class Gameplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		InvokeRepeating("NewWave", timerWave, timerWave);
+		InvokeRepeating("NewWave", 1, timerWave);
 		Gems = 200;
 	}
 

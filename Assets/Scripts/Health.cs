@@ -6,11 +6,12 @@ public class Health : MonoBehaviour
 {
 	public int MaxHealth;
 	public int CurrentHealth;
+	protected EntityElement entityElement;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        //entityElement = GetComponent<>
     }
 
     // Update is called once per frame
@@ -21,6 +22,7 @@ public class Health : MonoBehaviour
 
 	void ApplyDamages(int damages, Gameplay.Element element)
 	{
-
+		//if (Gameplay.IsElementStrongAgainst(element, ))
+		CurrentHealth -= damages;
 	}
 }

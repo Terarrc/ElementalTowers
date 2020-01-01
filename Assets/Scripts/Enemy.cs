@@ -5,16 +5,19 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 	EntityElement entityElement;
+	Health health;
 
 	int index = 0;
 	List<Vector3> path;
 	Vector3 offset;
 
 	public float speed;
+	public int damages;
 
 	private void Awake()
 	{
 		entityElement = GetComponent<EntityElement>();
+		health = GetComponent<Health>();
 	}
 
 	// Start is called before the first frame update
@@ -50,6 +53,6 @@ public class Enemy : MonoBehaviour
 
 	public void ApplyDamages(int damages, Gameplay.Element element)
 	{
-
+		health.ApplyDamages(damages, element);
 	}
 }

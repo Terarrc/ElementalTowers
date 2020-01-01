@@ -21,6 +21,22 @@ public class WavesManager : MonoBehaviour
 	void Start()
     {
 		gameplay.timerWaveEvent += GenerateWave;
+		gameplay.swapEvent += SwapElement;
+	}
+
+	void SwapElement(Gameplay.Element elem)
+	{
+		switch (elem) {
+			case Gameplay.Element.Fire:
+				additionnalFire++;
+				break;
+			case Gameplay.Element.Earth:
+				additionnalEarth++;
+				break;
+			case Gameplay.Element.Water:
+				additionnalWater++;
+				break;
+		}
 	}
 
 	void GenerateWave()
@@ -48,6 +64,10 @@ public class WavesManager : MonoBehaviour
 			enemy.SetPath(Path1);
 			enemy.SetElement(Gameplay.Element.Water);
 		}
+
+		additionnalFire = 0;
+		additionnalEarth = 0;
+		additionnalWater = 0;
 
 		waveLevel++;
 	}

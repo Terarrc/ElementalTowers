@@ -11,13 +11,14 @@ public class Gameplay : MonoBehaviour
         Earth
     }
 
-    delegate void SwapElementEvent();
-    public Element currentElement;
-    SwapElementEvent swapEvent;
+    public delegate void SwapElementEvent(Element elem);
+    public Element PlayerElement;
+    public SwapElementEvent swapEvent;
 
     void Awake()
     {
         swapEvent = null;
+        PlayerElement = Element.Fire;
         // Subscribe in other scripts like this -> swapEvent += new SwapElementEvent(functionName)
     }
 
@@ -25,6 +26,15 @@ public class Gameplay : MonoBehaviour
     void Start()
     {
        
+    }
+
+    // True if the attacking element is strong against the defending element
+    public static bool IsElementStrongAgainst(Element elemAttack, Element elemDefense)
+    {
+        if(elemAttack == Element.Fire && elemDefense == Element.Earth) { return true; }
+        if (elemAttack == Element.Water && elemDefense == Element.Fire) { return true; }
+        if (elemAttack == Element.Earth && elemDefense == Element.Water) { return true; }
+        return false;
     }
 
     public void SwapElementOnClick(int elem)
@@ -45,11 +55,12 @@ public class Gameplay : MonoBehaviour
 
     // Swaps the element of your base to another type
     void SwapElement(Element elem)
-    { 
-        if(elem != currentElement)
+    {
+        Debug.Log(elem);
+        if(elem != PlayerElement)
         {
-            currentElement = elem;
-            swapEvent();
+            PlayerElement = elem;
+            swapEvent?.Invoke(elem);
         }
     }
 

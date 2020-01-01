@@ -56,6 +56,27 @@ TextureImporter:
   - first:
       213: 5330010876497713853
     second: Base_8
+  - first:
+      213: 8391880989248596285
+    second: fire_carrier
+  - first:
+      213: -1790145400590651902
+    second: Base_1
+  - first:
+      213: -7006970659648225739
+    second: earth_carrier
+  - first:
+      213: -9093793420358700432
+    second: water_carrier
+  - first:
+      213: 4399886879491254844
+    second: fire_path
+  - first:
+      213: 5148436346952685988
+    second: earth_path
+  - first:
+      213: -2837685193218630633
+    second: water_path
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -85,7 +106,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -96,7 +117,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -117,7 +138,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,7 +150,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -492,6 +513,132 @@ TextureImporter:
       bones: []
       spriteID: 5b727729fbbede0468e4bdde2b2b98e5
       internalID: 5761609760724731429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_carrier
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1125
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0738f0db12a0884b8cd4a6e41bcb6d4
+      internalID: 8391880989248596285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: earth_carrier
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1125
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1efbbfc4b1fb5b540954cd276fa0d908
+      internalID: -7006970659648225739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_carrier
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1125
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1afd9a0e23a8de42b3c6dff03ad4103
+      internalID: -9093793420358700432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_path
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 1125
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bde3fcbd3b402d64684f4dc0dd7326fa
+      internalID: 4399886879491254844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: earth_path
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 1025
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d74897681bcc0e24d973abd15c69fd31
+      internalID: 5148436346952685988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_path
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 925
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65e0119440f4056429498a8fc713268a
+      internalID: -2837685193218630633
       vertices: []
       indices: 
       edges: []

@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0908cc7e31bbc9143b12b91287d605a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
 --- !u!114 &5294890455420500871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7818d2f0b6d0fd40931d95c9261c8e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHealth: 10
+  CurrentHealth: 10
 --- !u!114 &3761800635342950145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 587d36a46c1532549a0ad980c30df9cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanChangeElement: 0
 --- !u!58 &4188549710318195248
 CircleCollider2D:
   m_ObjectHideFlags: 0

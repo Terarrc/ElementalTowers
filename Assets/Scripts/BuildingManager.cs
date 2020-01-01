@@ -78,9 +78,11 @@ public class BuildingManager : MonoBehaviour
     private void PlaceBuilding(Vector2 v2) {
         Building o = Instantiate(chooseBuilding, v2, Quaternion.identity);
 
-		o.GetComponent<EntityElement>().EnableSwapElement(gameplay);
+		EntityElement towerElement = o.GetComponent<EntityElement>();
+		towerElement.EnableSwapElement(gameplay);
+		towerElement.Element = gameplay.PlayerElement;
 
-        SpriteRenderer towerSpriteRender = o.GetComponent<SpriteRenderer>();
+		SpriteRenderer towerSpriteRender = o.GetComponent<SpriteRenderer>();
         towerSpriteRender.color = Color.white;
     }
 }

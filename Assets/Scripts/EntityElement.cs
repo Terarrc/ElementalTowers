@@ -6,6 +6,13 @@ public class EntityElement : MonoBehaviour
 {
 	public bool CanChangeElement;
 
+    private bool isActive;
+    public bool IsActive {
+        get {
+            return CanChangeElement || isActive;
+        }
+    }
+
 	private Gameplay.Element element;
 	public Gameplay.Element Element { 
 		get {
@@ -47,6 +54,9 @@ public class EntityElement : MonoBehaviour
 	{
         if (CanChangeElement) {
             Element = elem;
+        } else {
+            isActive = Element == elem;
+            animator.SetBool("isActive", isActive);
         }
 	}
 

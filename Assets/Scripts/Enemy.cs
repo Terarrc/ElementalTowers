@@ -50,6 +50,6 @@ public class Enemy : MonoBehaviour
 
 	public void ApplyDamages(int damages, Gameplay.Element element)
 	{
-
+        Debug.Log("ouch");
 	}
 }

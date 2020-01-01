@@ -5,7 +5,12 @@ using UnityEngine;
 public class BuildingManager : MonoBehaviour
 {
     public Building tower;
+    public Building ressource;
+    public Building buffer;
+    public GameObject towerPreview;
     bool previewMode = false;
+
+    private Building chooseBuilding;
 
     // Start is called before the first frame update
     void Start()
@@ -21,10 +26,10 @@ public class BuildingManager : MonoBehaviour
             mask += 1 << LayerMask.NameToLayer("Buildings");
 
             Vector2 rectifiedPos = SnapToGrid();
-            tower.transform.position = rectifiedPos;
+            towerPreview.transform.position = rectifiedPos;
             Collider2D towerCollider = Physics2D.OverlapCircle(rectifiedPos, 0.01f, mask); 
 
-            SpriteRenderer towerSpriteRenderer = tower.GetComponent<SpriteRenderer>();
+            SpriteRenderer towerSpriteRenderer = towerPreview.GetComponent<SpriteRenderer>();
             if (towerCollider == null) {
                 // Can build
                 towerSpriteRenderer.color = new Color(0, 255, 0, 0.5f);
@@ -40,14 +45,24 @@ public class BuildingManager : MonoBehaviour
         }
     }
 
-    public void StartBuildingMode() {
+    public void StartBuildingMode(int choice) {
+        chooseBuilding =
+            choice == 0 ? tower :
+            choice == 1 ? ressource :
+            choice == 2 ? buffer :
+            null;
+
+        if (chooseBuilding == null) {
+            Debug.Log("Choosed Building index does not exist : " + choice);
+            return;
+        }
         previewMode = true;
-        tower.gameObject.SetActive(true);
+        towerPreview.gameObject.SetActive(true);
     }
 
     public void StopBuildingMode() {
         previewMode = false;
-        tower.gameObject.SetActive(false);
+        towerPreview.gameObject.SetActive(false);
     }
 
     private Vector2 SnapToGrid() {
@@ -59,8 +74,7 @@ public class BuildingManager : MonoBehaviour
     }
 
     private void PlaceBuilding(Vector2 v2) {
-        Debug.Log(this.GetType().Name + " - PlaceBuilding()");
-        Building o = Instantiate(tower, v2, Quaternion.identity);
+        Building o = Instantiate(chooseBuilding, v2, Quaternion.identity);
 
         SpriteRenderer towerSpriteRender = o.GetComponent<SpriteRenderer>();
         towerSpriteRender.color = Color.white;

@@ -11,6 +11,9 @@ public class EntityElement : MonoBehaviour
         get {
             return CanChangeElement || isActive;
         }
+        set {
+            isActive = value;
+        }
     }
 
 	private Gameplay.Element element;

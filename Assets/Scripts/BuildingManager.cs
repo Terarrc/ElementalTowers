@@ -92,5 +92,12 @@ public class BuildingManager : MonoBehaviour
 
 		SpriteRenderer towerSpriteRender = o.GetComponent<SpriteRenderer>();
         towerSpriteRender.color = Color.white;
+
+
+        ResourceGenerator rg = o.GetComponent<ResourceGenerator>();
+        if (rg != null) {
+            rg.gameplay = gameplay;
+            towerElement.IsActive = true;
+        }
     }
 }

@@ -113,7 +113,6 @@ public class WavesManager : MonoBehaviour
 
         UpdateTextWaves();
 
-
         for (int i = 0; i < (waveLevel / 2) + 4; i++) {
             Enemy enemy = Instantiate(Blob, new Vector3(-20, 7, 0) + Vector3.left * Random.Range(0, 2 + 0.5f * waveLevel), Quaternion.identity);
             enemy.SetPath(Path1);
@@ -145,9 +144,35 @@ public class WavesManager : MonoBehaviour
         waveLevel++;
     }
 
+    private void GenerateEnemy(int pathNumber, Gameplay.Element element) {
+        Vector3 initialPosition;
+        Vector3 positionShift;
+        List<Vector3> path;
+
+        switch(pathNumber) {
+            case 1:
+                initialPosition = new Vector3(-20, 7, 0);
+                positionShift = Vector3.left;
+                path = Path1;
+                break;
+            case 2:
+                initialPosition = new Vector3(20, 7, 0);
+                positionShift = Vector3.right;
+                path = Path2;
+                break;
+            default:
+                Debug.LogError("Incorrect path number: " + pathNumber);
+                return;
+        }
+
+        Enemy enemy = Instantiate(Blob, initialPosition + positionShift * Random.Range(0, 2 + 0.5f * waveLevel), Quaternion.identity);
+        enemy.SetPath(path);
+        enemy.SetElement(element);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

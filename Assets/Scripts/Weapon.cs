@@ -43,7 +43,7 @@ public class Weapon : MonoBehaviour
     List<GameObject> GetAllEnnemiesInRange()
     {
         List<GameObject> ennemiesInRange = new List<GameObject>();
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, range, 1 << LayerMask.NameToLayer("Ennemies"));
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, range, 1 << LayerMask.NameToLayer("Enemies"));
 
         foreach (Collider2D h in hits)
         {

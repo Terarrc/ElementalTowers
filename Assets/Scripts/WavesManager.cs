@@ -11,6 +11,7 @@ public class WavesManager : MonoBehaviour
     public Gameplay gameplay;
 
     public Enemy Blob;
+    public Enemy Boss;
 
     public int waveLevel;
     public Gameplay.Element element;

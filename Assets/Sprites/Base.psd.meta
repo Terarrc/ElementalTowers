@@ -80,6 +80,15 @@ TextureImporter:
   - first:
       213: 6234176133674011997
     second: castle
+  - first:
+      213: -5954815679848510617
+    second: earth_boss
+  - first:
+      213: 3838357597447391018
+    second: fire_boss
+  - first:
+      213: -4523490512057060204
+    second: water_boss
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -663,6 +672,69 @@ TextureImporter:
       bones: []
       spriteID: 3f4aea3e68de2fc4bb1766b300737913
       internalID: 6234176133674011997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: earth_boss
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 725
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30f18c26b2931854daf4a70cbf76dcb7
+      internalID: -5954815679848510617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_boss
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 725
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b10042bcd11097743924ac64351d6380
+      internalID: 3838357597447391018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water_boss
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 725
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f64076f69938a464c98cba8da1e79d70
+      internalID: -4523490512057060204
       vertices: []
       indices: 
       edges: []

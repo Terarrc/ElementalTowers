@@ -25,7 +25,7 @@ public class Health : MonoBehaviour
 
 	}
 
-	public void ApplyDamages(int damages, Gameplay.Element element)
+	public virtual void ApplyDamages(int damages, Gameplay.Element element)
 	{
 		if (Gameplay.IsElementStrongAgainst(element, entityElement.Element)) {
 			CurrentHealth -= damages;	
@@ -34,7 +34,5 @@ public class Health : MonoBehaviour
 				Destroy(gameObject);
 			}
 		}
-
-
 	}
 }

@@ -31,6 +31,11 @@ public class WavesManager : MonoBehaviour
         public int level;
     }
 
+    private enum EnemyType {
+        Normal,
+        Boss
+    }
+
     private Queue<Wave> nextWaves = new Queue<Wave>();
 
     // Start is called before the first frame update
@@ -158,34 +163,17 @@ public class WavesManager : MonoBehaviour
         additionnalWater = 0;
     }
 
-    private void GenerateBlob(int pathNumber, Gameplay.Element element, int level) {
-        Vector3 initialPosition;
-        Vector3 positionShift;
-        List<Vector3> path;
-
-        switch(pathNumber) {
-            case 1:
-                initialPosition = new Vector3(-20, 7, 0);
-                positionShift = Vector3.left;
-                path = Path1;
-                break;
-            case 2:
-                initialPosition = new Vector3(20, 7, 0);
-                positionShift = Vector3.right;
-                path = Path2;
-                break;
-            default:
-                Debug.LogError("Incorrect path number: " + pathNumber);
-                return;
-        }
-
-        Enemy enemy = Instantiate(Blob, initialPosition + positionShift * Random.Range(0, 2 + 0.5f * level), Quaternion.identity);
-        enemy.SetPath(path);
-        enemy.SetElement(element);
-        enemy.GetComponent<Health>().killedEvent += gameplay.IncreaseResource;
+    private void GenerateBlob(int pathNumber, Gameplay.Element element, int level)
+    {
+        GenerateEnemy(pathNumber, level, EnemyType.Normal, element);
     }
 
     private void GenerateBoss(int pathNumber, int level)
+    {
+        GenerateEnemy(pathNumber, level, EnemyType.Boss);
+    }
+
+    private void GenerateEnemy(int pathNumber, int level, EnemyType type, Gameplay.Element element = Gameplay.Element.Fire)
     {
         Vector3 initialPosition;
         Vector3 positionShift;
@@ -207,8 +195,18 @@ public class WavesManager : MonoBehaviour
                 return;
         }
 
-        Enemy enemy = Instantiate(Boss, initialPosition + positionShift * Random.Range(0, ((level + 1) / 10)), Quaternion.identity);
+        Enemy enemy = null;
+        switch(type) {
+            case EnemyType.Normal:
+                enemy = Instantiate(Blob, initialPosition + positionShift * Random.Range(0, 2 + 0.5f * level), Quaternion.identity);
+                enemy.SetElement(element);
+                break;
+            case EnemyType.Boss:
+                enemy = Instantiate(Boss, initialPosition + positionShift * Random.Range(0, ((level + 1) / 10)), Quaternion.identity);
+                break;
+        }
         enemy.SetPath(path);
+        enemy.GetComponent<Health>().killedEvent += gameplay.IncreaseResource;
     }
 
     // Update is called once per frame

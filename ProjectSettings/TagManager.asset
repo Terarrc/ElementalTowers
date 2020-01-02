@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - UiText
+  - Earth
+  - Fire
+  - Water
   layers:
   - Default
   - TransparentFX

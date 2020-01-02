@@ -132,7 +132,7 @@ public class WavesManager : MonoBehaviour
         UpdateTextWaves();
 
         if ((newWave.level + 1) % 10 == 0) {
-            for (int i = 0; i < newWave.level / 10; i++) {
+            for (int i = 0; i < (newWave.level + 1) / 10; i++) {
                 GenerateBoss(1, newWave.level);
             }   
         } else {
@@ -207,7 +207,7 @@ public class WavesManager : MonoBehaviour
                 return;
         }
 
-        Enemy enemy = Instantiate(Boss, initialPosition + positionShift * Random.Range(0, (level / 10)), Quaternion.identity);
+        Enemy enemy = Instantiate(Boss, initialPosition + positionShift * Random.Range(0, ((level + 1) / 10)), Quaternion.identity);
         enemy.SetPath(path);
     }
 

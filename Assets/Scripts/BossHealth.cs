@@ -12,8 +12,9 @@ public class BossHealth : Health
     int firePhase;
 
     // Start is called before the first frame update
-    void Awake()
+    new void Awake()
     {
+        base.Awake();
         earthPhase = MaxHealth * 2 / 3;
         firePhase = MaxHealth / 3;
 

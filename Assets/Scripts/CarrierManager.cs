@@ -8,9 +8,11 @@ public class CarrierManager : MonoBehaviour
 {
 
     //public EntityElement entityElement;
-    public int speed;
     public Carrier carrier;
-    public Gameplay gameplay;
+	private EntityElement carrierElement;
+
+
+	public Gameplay gameplay;
     public GameObject target;
     private GameObject path;
 
@@ -21,6 +23,9 @@ public class CarrierManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		carrierElement = carrier.GetComponent<EntityElement>();
+		carrierElement.EnableSwapElement(gameplay);
+		carrier.gameObject.SetActive(false);
         // Starting in X seconds event will repeat all x seconds 
         // InvokeRepeating("GenerateCarrier", 2.0f, 0.3f);
         /*
@@ -53,17 +58,14 @@ public class CarrierManager : MonoBehaviour
         Vector2 startPoint = transform.position;
         Vector2 targetPoint = target.transform.position;
 
-        Carrier newCarrier = Instantiate(carrier, startPoint, Quaternion.identity);
+		carrier.gameObject.SetActive(true);
+		carrier.transform.position = startPoint;
 
-        newCarrier.speed = 1;
-        newCarrier.target = new Vector2(target.transform.position.x, target.transform.position.y);
-
-        EntityElement carrierElement = newCarrier.GetComponent<EntityElement>();
-        carrierElement.EnableSwapElement(gameplay);
+		carrier.target = new Vector2(target.transform.position.x, target.transform.position.y);
         carrierElement.Element = gameplay.PlayerElement;
 
-        newCarrier.targetCollider = target.GetComponent<BoxCollider2D>();
-        newCarrier.GoToTarget();
+		carrier.targetCollider = target.GetComponent<BoxCollider2D>();
+		carrier.GoToTarget();
         
     }
 

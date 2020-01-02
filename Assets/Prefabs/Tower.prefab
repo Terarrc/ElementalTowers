@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5689c9fac413bc30bb24fc518f2c119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cost: 100
 --- !u!58 &-6737297323444055150
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -159,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adf3e8517477ba446bb44f348ca5f26a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 5
   speed: 5
   fireRate: 1
   range: 3

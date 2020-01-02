@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2033243760681324560}
   - component: {fileID: -8483317887632544553}
   - component: {fileID: -4600602046810191263}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Carrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da19e50d5efaf4e408be347416d76b72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 0.5
+  gift: 500
   target: {x: 0, y: 0}
   targetCollider: {fileID: 0}
 --- !u!95 &-4600602046810191263

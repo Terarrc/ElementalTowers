@@ -6,7 +6,8 @@ public class Carrier : MonoBehaviour
 {
     private EntityElement entityElement;
 
-    public int speed = 0;
+    public float speed;
+	public int gift;
     public Vector2 target;
     public BoxCollider2D targetCollider;
     private bool isGoing = true;

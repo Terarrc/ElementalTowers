@@ -5,7 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
 	public int MaxHealth;
-	public int CurrentHealth;
+	protected int CurrentHealth;
 	protected EntityElement entityElement;
 
 	public delegate void KilledEvent();

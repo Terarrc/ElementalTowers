@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WavesManager : MonoBehaviour
 {
@@ -17,11 +18,65 @@ public class WavesManager : MonoBehaviour
     public int additionnalEarth;
     public int additionnalWater;
 
+    public Text wavePreview;
+    private Queue<Gameplay.Element> nextWaves = new Queue<Gameplay.Element>();
+
     // Start is called before the first frame update
     void Start()
     {
         gameplay.timerWaveEvent += GenerateWave;
         gameplay.swapEvent += SwapElement;
+
+        switch (gameplay.PlayerElement) {
+            case Gameplay.Element.Fire:
+                nextWaves.Enqueue(Gameplay.Element.Earth);
+                break;
+            case Gameplay.Element.Earth:
+                nextWaves.Enqueue(Gameplay.Element.Water);
+                break;
+            case Gameplay.Element.Water:
+                nextWaves.Enqueue(Gameplay.Element.Fire);
+                break;
+        }
+
+        for (int i = 0; i < 7; i++) {
+            switch (Random.Range(0, 3)) {
+                case 0:
+                    nextWaves.Enqueue(Gameplay.Element.Fire);
+                    break;
+                case 1:
+                    nextWaves.Enqueue(Gameplay.Element.Earth);
+                    break;
+                case 2:
+                    nextWaves.Enqueue(Gameplay.Element.Water);
+                    break;
+            }
+        }
+
+        UpdateTextWaves();
+    }
+
+    void UpdateTextWaves()
+    {
+        string message = "";
+        int i = 0;
+        foreach (Gameplay.Element elem in nextWaves) {
+            switch (elem) {
+                case Gameplay.Element.Fire:
+                    message += "<color=red>O</color>";
+                    break;
+                case Gameplay.Element.Earth:
+                    message += "<color=green>O</color>";
+                    break;
+                case Gameplay.Element.Water:
+                    message += "<color=blue>O</color>";
+                    break;
+            }
+            if (i < nextWaves.Count - 1)
+                message += " - ";
+            i++;
+        }
+        wavePreview.text = message;
     }
 
     void SwapElement(Gameplay.Element elem)
@@ -41,6 +96,22 @@ public class WavesManager : MonoBehaviour
 
     void GenerateWave()
     {
+        element = nextWaves.Dequeue();
+
+        switch (Random.Range(0, 3)) {
+            case 0:
+                nextWaves.Enqueue(Gameplay.Element.Fire);
+                break;
+            case 1:
+                nextWaves.Enqueue(Gameplay.Element.Earth);
+                break;
+            case 2:
+                nextWaves.Enqueue(Gameplay.Element.Water);
+                break;
+        }
+
+        UpdateTextWaves();
+
         for (int i = 0; i < (waveLevel / 2) + 4; i++) {
             Enemy enemy = Instantiate(Blob, new Vector3(-20, 7, 0) + Vector3.left * Random.Range(0, 2 + 0.5f * waveLevel), Quaternion.identity);
             enemy.SetPath(Path1);

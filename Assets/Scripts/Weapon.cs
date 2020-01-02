@@ -11,7 +11,6 @@ public class Weapon : MonoBehaviour
     public float range;
     public Projectile projectile;
     private EntityElement entityElement;
-    private Enemy target;
 
     private float timerFire;
 

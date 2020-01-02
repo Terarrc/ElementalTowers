@@ -64,9 +64,7 @@ public class CarrierManager : MonoBehaviour
 		carrier.target = new Vector2(target.transform.position.x, target.transform.position.y);
         carrierElement.Element = gameplay.PlayerElement;
 
-		carrier.targetCollider = target.GetComponent<BoxCollider2D>();
-		carrier.GoToTarget();
-        
+		carrier.GoToTarget();     
     }
 
     // Create a Randomized Path

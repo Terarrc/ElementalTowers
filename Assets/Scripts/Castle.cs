@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Castle : MonoBehaviour
 {
-	public int health;
+    public int health;
 
-	public delegate void GameOverEvent();
-	public GameOverEvent gameOverEvent;
+    public delegate void GameOverEvent();
+    public GameOverEvent gameOverEvent;
+    public Gameplay gameplay;
 
-	// Start is called before the first frame update
-	void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         
     }
@@ -18,23 +19,31 @@ public class Castle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		int layerMask = 1 << LayerMask.NameToLayer("Enemies");
-		Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1, layerMask);
+        int layerMask = 1 << LayerMask.NameToLayer("Enemies");
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1, layerMask);
 
-		foreach (Collider2D hit in hits) {
-			Enemy enemy = hit.GetComponent<Enemy>();
-			if (enemy == null) {
-				continue;
-			}
+        foreach (Collider2D hit in hits) {
+            Enemy enemy = hit.GetComponent<Enemy>();
+            if (enemy == null) {
+                continue;
+            }
 
-			health -= enemy.damages;
+            health -= enemy.damages;
 
-			Destroy(enemy.gameObject);
+            Destroy(enemy.gameObject);
 
-			if (health <= 0) {
-				gameOverEvent.Invoke();
-				Destroy(gameObject);
-			}
-		}
+            if (health <= 0) {
+                gameOverEvent.Invoke();
+                Destroy(gameObject);
+            }
+        }
+
+        layerMask = 1 << LayerMask.NameToLayer("Carrier");
+        Collider2D carrierHit = Physics2D.OverlapCircle(transform.position, 1, layerMask);
+        if (carrierHit != null) {
+            Carrier carrier = carrierHit.GetComponent<Carrier>();
+            gameplay.Gems += carrier.gift;
+            carrier.gameObject.SetActive(false);
+        }
     }
 }

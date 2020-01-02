@@ -1221,7 +1221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d5e81e7e76b08e4381bfc5d20857328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
   carrier: {fileID: 818627793}
   gameplay: {fileID: 1637059353}
   target: {fileID: 1185687029}
@@ -1252,12 +1251,12 @@ PrefabInstance:
     - target: {fileID: 1873579756933139979, guid: ce25db6a81780bb4f8b0b24fd6c1d8fb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.01315546
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1873579756933139979, guid: ce25db6a81780bb4f8b0b24fd6c1d8fb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.46837
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1873579756933139979, guid: ce25db6a81780bb4f8b0b24fd6c1d8fb,
         type: 3}
@@ -1317,7 +1316,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 818627792}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1273380799}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da19e50d5efaf4e408be347416d76b72, type: 3}
@@ -4035,9 +4034,9 @@ MonoBehaviour:
   Blob: {fileID: 990095069644069680, guid: 00e28d8a7a5eeb3488576242c488847e, type: 3}
   waveLevel: 0
   element: 2
-  additionnalFire: 1
-  additionnalEarth: 1
-  additionnalWater: 1
+  additionnalFire: 0
+  additionnalEarth: 0
+  additionnalWater: 0
 --- !u!1 &1185687029
 GameObject:
   m_ObjectHideFlags: 0
@@ -4151,6 +4150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  gameplay: {fileID: 1637059353}
 --- !u!1 &1216444920
 GameObject:
   m_ObjectHideFlags: 0
@@ -4417,6 +4417,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253671013}
   m_CullTransparentMesh: 0
+--- !u!1 &1273380799 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1873579756933139989, guid: ce25db6a81780bb4f8b0b24fd6c1d8fb,
+    type: 3}
+  m_PrefabInstance: {fileID: 818627792}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &1273380804
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273380799}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.25
 --- !u!1 &1637059352
 GameObject:
   m_ObjectHideFlags: 0
@@ -4447,7 +4469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gemsText: {fileID: 461996891}
-  timerWave: 0
+  timerWave: 5
   PlayerElement: 0
 --- !u!4 &1637059354
 Transform:

@@ -9,7 +9,6 @@ public class Carrier : MonoBehaviour
     public float speed;
 	public int gift;
     public Vector2 target;
-    public BoxCollider2D targetCollider;
     private bool isGoing = true;
 
 
@@ -26,7 +25,7 @@ public class Carrier : MonoBehaviour
     {
         if (isGoing)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.fixedDeltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
         }
     }
 

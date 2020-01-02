@@ -37,7 +37,6 @@ public class Gameplay : MonoBehaviour
 	public delegate void TimerWaveEvent();
 	public TimerWaveEvent timerWaveEvent;
 
-
 	void Awake()
     {
         swapEvent = null;
@@ -94,6 +93,10 @@ public class Gameplay : MonoBehaviour
         }
     }
 
+    void KilledEnemy(int loot) {
+        Gems += loot;
+    }
+
     // Create a True random of a List
     public static void Shuffle<T>(IList<T> list)
     {
@@ -108,7 +111,10 @@ public class Gameplay : MonoBehaviour
             list[n] = value;
         }
     }
-
+    
+    public void IncreaseResource(int loot) {
+        Gems += loot;
+    }
 
     // Update is called once per frame
     void Update()

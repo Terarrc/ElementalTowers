@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
 
 	public float speed;
 	public int damages;
+    public int loot;
 
 	private void Awake()
 	{

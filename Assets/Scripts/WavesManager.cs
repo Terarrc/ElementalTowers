@@ -167,6 +167,7 @@ public class WavesManager : MonoBehaviour
         Enemy enemy = Instantiate(Blob, initialPosition + positionShift * Random.Range(0, 2 + 0.5f * waveLevel), Quaternion.identity);
         enemy.SetPath(path);
         enemy.SetElement(element);
+        enemy.GetComponent<Health>().killedEvent += gameplay.IncreaseResource;
     }
 
     // Update is called once per frame

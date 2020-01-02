@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
 	protected int CurrentHealth;
 	protected EntityElement entityElement;
 
-	public delegate void KilledEvent();
+	public delegate void KilledEvent(int loot);
 	public KilledEvent killedEvent;
 
 
@@ -30,7 +30,7 @@ public class Health : MonoBehaviour
 		if (Gameplay.IsElementStrongAgainst(element, entityElement.Element)) {
 			CurrentHealth -= damages;	
 			if (CurrentHealth <= 0) {
-				killedEvent?.Invoke();
+				killedEvent?.Invoke(gameObject.GetComponent<Enemy>().loot);
 				Destroy(gameObject);
 			}
 		}

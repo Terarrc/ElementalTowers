@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   damages: 2
+  loot: 10
 --- !u!114 &5294890455420500871
 MonoBehaviour:
   m_ObjectHideFlags: 0

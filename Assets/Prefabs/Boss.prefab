@@ -228,6 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.5
   damages: 50
+  loot: 250
 --- !u!58 &7176347912272808144
 CircleCollider2D:
   m_ObjectHideFlags: 0

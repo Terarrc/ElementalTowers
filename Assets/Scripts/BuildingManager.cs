@@ -37,7 +37,7 @@ public class BuildingManager : MonoBehaviour
             Collider2D towerCollider = Physics2D.OverlapCircle(rectifiedPos, 0.01f, mask); 
 
             SpriteRenderer towerSpriteRenderer = towerPreview.GetComponent<SpriteRenderer>();
-            if (towerCollider == null) {
+            if (towerCollider == null && chooseBuilding.cost <= gameplay.Gems) {
                 // Can build
                 towerSpriteRenderer.color = new Color(0, 255, 0, 0.5f);
                 if (Input.GetMouseButtonDown(0)) {

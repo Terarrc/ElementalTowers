@@ -757,7 +757,7 @@ GameObject:
   - component: {fileID: 461996891}
   m_Layer: 5
   m_Name: Text_Gems
-  m_TagString: Untagged
+  m_TagString: UiText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

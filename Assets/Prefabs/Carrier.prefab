@@ -110,10 +110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da19e50d5efaf4e408be347416d76b72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 0.25
   gift: 500
   target: {x: 0, y: 0}
-  targetCollider: {fileID: 0}
 --- !u!95 &-4600602046810191263
 Animator:
   serializedVersion: 3

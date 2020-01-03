@@ -38,6 +38,12 @@ public class WavesManager : MonoBehaviour
 
     private Queue<Wave> nextWaves = new Queue<Wave>();
 
+
+    public int GetCurrentWaveLevel()
+    {
+        return nextWaves.Peek().level - 1;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

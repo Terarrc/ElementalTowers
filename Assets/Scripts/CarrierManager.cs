@@ -11,7 +11,6 @@ public class CarrierManager : MonoBehaviour
     public Carrier carrier;
 	private EntityElement carrierElement;
 
-
 	public Gameplay gameplay;
     public GameObject target;
     private GameObject path;
@@ -58,18 +57,16 @@ public class CarrierManager : MonoBehaviour
         Vector2 startPoint = transform.position;
         Vector2 targetPoint = target.transform.position;
 
-		carrier.gameObject.SetActive(true);
 		carrier.transform.position = startPoint;
+        carrier.gameObject.SetActive(true);
 
-		carrier.target = new Vector2(target.transform.position.x, target.transform.position.y);
+        carrier.target = new Vector2(target.transform.position.x, target.transform.position.y);
         carrierElement.Element = gameplay.PlayerElement;
-
-		carrier.GoToTarget();     
     }
 
     // Create a Randomized Path
 
-    void GenerateCarrierPath()
+    public void GenerateCarrierPath()
     {
         //Vector2 startPath = transform.position;
         int pathLength = 9;

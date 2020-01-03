@@ -9,6 +9,7 @@ public class Castle : MonoBehaviour
     public delegate void GameOverEvent();
     public GameOverEvent gameOverEvent;
     public Gameplay gameplay;
+    public CarrierManager carrierManager;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +34,7 @@ public class Castle : MonoBehaviour
             Destroy(enemy.gameObject);
 
             if (health <= 0) {
-                gameOverEvent.Invoke();
+                gameOverEvent?.Invoke();
                 Destroy(gameObject);
             }
         }
@@ -44,6 +45,7 @@ public class Castle : MonoBehaviour
             Carrier carrier = carrierHit.GetComponent<Carrier>();
             gameplay.Gems += carrier.gift;
             carrier.gameObject.SetActive(false);
+            carrierManager.GenerateCarrierPath();
         }
     }
 }

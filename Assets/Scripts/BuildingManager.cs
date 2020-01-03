@@ -12,6 +12,7 @@ public class BuildingManager : MonoBehaviour
     public Building buffer;
     public GameObject towerPreview;
     bool previewMode = false;
+    public GameObject areaOfEffect;
 
     private Building chooseBuilding;
 
@@ -35,6 +36,11 @@ public class BuildingManager : MonoBehaviour
             Vector2 rectifiedPos = SnapToGrid();
             towerPreview.transform.position = rectifiedPos;
             Collider2D towerCollider = Physics2D.OverlapCircle(rectifiedPos, 0.01f, mask); 
+
+            Vector2 centeredPos = rectifiedPos;
+            centeredPos.x = Mathf.Floor(centeredPos.x) + 0.5f;
+            centeredPos.y = Mathf.Floor(centeredPos.y) + 0.5f;
+            areaOfEffect.transform.position = centeredPos;
 
             SpriteRenderer towerSpriteRenderer = towerPreview.GetComponent<SpriteRenderer>();
             if (towerCollider == null && chooseBuilding.cost <= gameplay.Gems) {
@@ -70,6 +76,14 @@ public class BuildingManager : MonoBehaviour
                 child.gameObject.SetActive(false);
             }
         }
+
+        areaOfEffect.SetActive(true);
+        Vector3 aoeScaleVector = areaOfEffect.transform.localScale;
+        Weapon buildingWeapon = chooseBuilding.GetComponent<Weapon>();
+        float range = (buildingWeapon != null ? buildingWeapon.range : 0) * 2 + 1;
+        aoeScaleVector.x = range;
+        aoeScaleVector.y = range;
+        areaOfEffect.transform.localScale = aoeScaleVector;
     }
 
     public void StopBuildingMode() {
@@ -79,6 +93,8 @@ public class BuildingManager : MonoBehaviour
         foreach (Transform child in canvas.transform) {
             child.gameObject.SetActive(true);
         }
+
+        areaOfEffect.SetActive(false);
 	}
 
     private Vector2 SnapToGrid() {
